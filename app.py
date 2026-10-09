@@ -46,7 +46,8 @@ def process_video():
         if os.path.exists(full_video_path):
             os.remove(full_video_path)
 
-        ydl_opts = {
+        cookies_path = os.path.join(os.getcwd(), 'cookies.txt')
+        ydl_opts = {   
         'outtmpl': full_video_path,
         'ffmpeg_location': os.getcwd(),
         'nocheckcertificate': True,
