@@ -47,14 +47,14 @@ def process_video():
             os.remove(full_video_path)
 
         ydl_opts = {
-            'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
-            'outtmpl': full_video_path,
-            'ffmpeg_location': os.getcwd(),
-            'nocheckcertificate': True,
-            'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36',
-            'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
+        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
+        'outtmpl': full_video_path,
+        'ffmpeg_location': os.getcwd(),
+        'nocheckcertificate': True,
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)...',
+        'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
+        'cookiefile': 'cookies.txt'
         }
-
         with YoutubeDL(ydl_opts) as ydl:
             ydl.download([youtube_url])
 
@@ -97,3 +97,4 @@ def process_video():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+    
