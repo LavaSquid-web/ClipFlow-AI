@@ -53,7 +53,7 @@ def process_video():
         'nocheckcertificate': True,
         'no_warnings': True,
         'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
-        'extractor_args': {'youtube': {'player_client': ['tv_downgraded', 'web']}},
+        'extractor_args': {'youtube': {'player_client': ['tv_downgraded', 'web', 'android_vr']}},
         'cookiefile': cookies_path
     }
         with YoutubeDL(ydl_opts) as ydl:
