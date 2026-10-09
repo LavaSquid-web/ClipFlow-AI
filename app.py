@@ -47,13 +47,14 @@ def process_video():
             os.remove(full_video_path)
 
         cookies_path = os.path.join(os.getcwd(), 'cookies.txt')
-        ydl_opts = {   
+        ydl_opts = {
         'outtmpl': full_video_path,
         'ffmpeg_location': os.getcwd(),
         'nocheckcertificate': True,
-        'user_agent': 'Mozilla/5.0 (iPhone; CPU iPhone OS 16_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/16.6 Mobile/15E148 Safari/604.1',
-        'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
-        'cookiefile': 'cookies.txt'
+        'no_warnings': True,
+        'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+        'extractor_args': {'youtube': {'player_client': ['tv_downgraded', 'web']}},
+        'cookiefile': cookies_path
     }
         with YoutubeDL(ydl_opts) as ydl:
             ydl.download([youtube_url])
