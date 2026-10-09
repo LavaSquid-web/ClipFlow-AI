@@ -1,4 +1,3 @@
 Flask
-yt-dlp
-imageio-ffmpeg
+yt-dlp>=2024.10.22
 gunicorn
