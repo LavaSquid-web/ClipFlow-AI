@@ -47,7 +47,6 @@ def process_video():
             os.remove(full_video_path)
 
         ydl_opts = {
-        'format': 'best',  # <--- Changed to 'best' for maximum compatibility
         'outtmpl': full_video_path,
         'ffmpeg_location': os.getcwd(),
         'nocheckcertificate': True,
