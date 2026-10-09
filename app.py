@@ -47,14 +47,14 @@ def process_video():
             os.remove(full_video_path)
 
         ydl_opts = {
-        'format': 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best',
+        'format': 'best',  # <--- Changed to 'best' for maximum compatibility
         'outtmpl': full_video_path,
         'ffmpeg_location': os.getcwd(),
         'nocheckcertificate': True,
         'user_agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)...',
         'extractor_args': {'youtube': {'player_client': ['android', 'web']}},
         'cookiefile': 'cookies.txt'
-        }
+    }
         with YoutubeDL(ydl_opts) as ydl:
             ydl.download([youtube_url])
 
